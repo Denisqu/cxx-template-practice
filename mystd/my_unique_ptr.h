@@ -4,12 +4,15 @@
 namespace mystd {
 
 template <typename T> class unique_ptr {
+
 public:
-  unique_ptr(T *ptr) noexcept { pData = ptr; };
+  explicit unique_ptr(T *ptr) noexcept { pData = ptr; };
+
   unique_ptr(unique_ptr<T> &&other) noexcept {
     pData = other.pData;
     other.pData = nullptr;
   }
+
   unique_ptr<T> &operator=(unique_ptr<T> &&rhs) noexcept {
     if (this == rhs)
       return *this;
@@ -20,16 +23,19 @@ public:
     rhs.pData = nullptr;
     return *this;
   }
+
   T &operator*() const { return *pData; }
+
   ~unique_ptr() {
-    if (pData)
       delete pData;
   }
+
   unique_ptr &operator=(mystd::unique_ptr<T> &rhs) = delete;
   unique_ptr(mystd::unique_ptr<T> &other) = delete;
 
 private:
   T *pData = nullptr;
+
 };
 } // namespace mystd
 
