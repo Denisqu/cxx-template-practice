@@ -3,5 +3,6 @@
 
 int main() {
     auto a = mystd::unique_ptr<int>(new int(10));
-    std::cout << *a << std::endl;
+    auto b = std::move(a);
+    std::cout << *b << std::endl;
 }
