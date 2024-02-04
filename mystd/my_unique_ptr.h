@@ -3,7 +3,7 @@
 
 namespace mystd {
 
-template <typename T, typename Deleter> class unique_ptr {
+template <typename T> class unique_ptr {
 public:
   unique_ptr(T *ptr) noexcept { pData = ptr; };
   unique_ptr(unique_ptr<T> &&other) noexcept {
