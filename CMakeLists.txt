@@ -6,8 +6,7 @@ project(templates-practice VERSION 0.1 LANGUAGES CXX)
 set(PROJECT_SOURCES
         main.cpp
         mystd/my_unique_ptr.cpp mystd/my_unique_ptr.h
-        mystd/unique_ptr_with_deleter.cpp
-        mystd/unique_ptr_with_deleter.h
+        mystd/my_unique_ptr_with_deleter.cpp mystd/my_unique_ptr_with_deleter.h
 )
 
 

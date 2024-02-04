@@ -37,5 +37,4 @@ private:
 
 };
 } // namespace mystd
-
 #endif // __MY_UNIQUE_PTR_H__
